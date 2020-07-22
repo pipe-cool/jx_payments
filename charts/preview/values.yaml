@@ -1,4 +1,9 @@
-
+cleanup:
+  Annotations:
+    helm.sh/hook: pre-delete
+    helm.sh/hook-delete-policy: hook-succeeded
+  Args:
+  - --cleanup
 expose:
   Annotations:
     helm.sh/hook: post-install,post-upgrade
@@ -7,16 +12,21 @@ expose:
     exposer: Ingress
     http: true
     tlsacme: false
-
-cleanup:
-  Args:
-    - --cleanup
-  Annotations:
-    helm.sh/hook: pre-delete
-    helm.sh/hook-delete-policy: hook-succeeded
+mysql:
+  fullnameOverride: mysql
+  persistence:
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 1Gi
+    annotations: {}
+  mysqlRootPassword: password
+  mysqlDatabase: moneyfx
 
 preview:
+  nameOverride: jx-payments
+  replicaCount: 1
   image:
     repository:
     tag:
     pullPolicy: IfNotPresent
+  namespace: jx-previews
