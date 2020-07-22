@@ -11,7 +11,7 @@ dependencies:
 
 - name: mysql
   repository: https://kubernetes-charts.storage.googleapis.com/
-  version: ~0.12.0
+  version: ">=0.15.0"
 
   # !! "alias: preview" must be last entry in dependencies array !!
   # !! Place custom dependencies above !!
