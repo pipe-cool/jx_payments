@@ -5,6 +5,7 @@ RUN apt-get install -y libmariadb-dev
 WORKDIR /manning/jx-payments
 COPY requirements.txt /manning/jx-payments/
 RUN pip install -r requirements.txt
+RUN pip install mysqlclient
 ADD . /manning/jx-payments/
 
 EXPOSE 8080
