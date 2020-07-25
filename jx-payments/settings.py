@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'moneyfx',
         'USER': 'root',
 	    'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'password'),
-        'HOST': os.environ.get('MONEYFX_PG_HOST', 'mysql'),
+        'HOST': os.environ.get('MONEYFX_PG_HOST', 'mysql.svc.cluster.local'),
         'PORT': 3306,
     }
 }
