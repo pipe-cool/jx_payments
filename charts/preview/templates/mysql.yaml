@@ -5,5 +5,3 @@ metadata:
 spec:
   type: ExternalName
   externalName: mysql
-  ports:
-    - port: 3306
