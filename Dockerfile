@@ -1,7 +1,8 @@
 FROM python:3
 ENV PYTHONUNBUFFERED 1
 RUN mkdir -p /manning/jx-payments
-RUN apt-get install -y libmariadb-dev dnsutils
+RUN apt-get install -y libmariadb-dev
+RUN apt-get install -y dnsutils
 WORKDIR /manning/jx-payments
 COPY requirements.txt /manning/jx-payments/
 RUN pip install -r requirements.txt
