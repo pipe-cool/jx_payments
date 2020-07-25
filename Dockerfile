@@ -6,7 +6,6 @@ WORKDIR /manning/jx-payments
 COPY requirements.txt /manning/jx-payments/
 RUN pip install -r requirements.txt
 RUN pip install mysqlclient
-RUN pip install --upgrade pip setuptools
 ADD . /manning/jx-payments/
 
 EXPOSE 8080
