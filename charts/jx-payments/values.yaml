@@ -43,6 +43,9 @@ canary:
   # Please overwrite the `canary.host` in `values.yaml` in each environment repository (e.g., staging, production)
   host: acme.com
 
+setupTasks:
+  - python manage.py migrate
+
 service:
   name: jx-payments
   type: ClusterIP
