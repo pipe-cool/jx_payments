@@ -1,9 +1,8 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: mysql
 spec:
-  type: ExternalName
-  externalName: mysql.svc.cluster.local
+  externalName: mysql
   ports:
-  - port: 3306
+    - port: 3306
