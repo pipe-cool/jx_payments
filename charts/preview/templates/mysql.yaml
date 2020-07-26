@@ -3,6 +3,6 @@ kind: Service
 metadata:
   name: mysql
 spec:
-  externalName: mysql
+  externalName: mysql.jx-mmontalvo-jx-payments-pr-2-mysql.svc.cluster.local
   ports:
     - port: 3306
