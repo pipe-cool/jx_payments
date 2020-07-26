@@ -13,7 +13,7 @@ expose:
     http: true
     tlsacme: false
 mysql:
-  fullnameOverride: mysql.jx-mmontalvo-jx-payments-pr-2-mysql.svc.cluster.local
+  fullnameOverride: mysql
   persistence:
     enabled: true
     accessMode: ReadWriteOnce
