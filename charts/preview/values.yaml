@@ -13,7 +13,6 @@ expose:
     http: true
     tlsacme: false
 mysql:
-  fullnameOverride: mysql
   persistence:
     enabled: true
     accessMode: ReadWriteOnce
