@@ -3,5 +3,6 @@ kind: Service
 metadata:
   name: mysql
 spec:
+  externalName: mysql
   ports:
   - port: 3306
