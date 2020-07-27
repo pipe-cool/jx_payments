@@ -31,4 +31,4 @@ preview:
     pullPolicy: IfNotPresent
   namespace: jx-previews
   setupTasks:
-  - ["python manage.py migrate"]
+  - python manage.py migrate
