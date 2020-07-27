@@ -10,9 +10,6 @@ image:
 # define environment variables here as a map of key: value
 # env:
 
-setupTasks:
-  - python manage.py migrate
-
 service:
   name: jx-payments
   type: ClusterIP
