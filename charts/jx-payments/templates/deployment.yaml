@@ -21,11 +21,16 @@ spec:
 {{- end }}
     spec:
       initContainers:
-    {{- range $i, $e := .Values.setupTasks }}
+{{- range $i, $e := .Values.setupTasks }}
       - name: setup-{{ $i }}
         image: "{{ $.Values.image.repository }}:{{ $.Values.image.tag }}"
-        args: {{ $e }}
-    {{- end }}
+        args: ['sh', '-c', "{{ $e }}"]
+        env:
+{{- range $pkey, $pval := .Values.env }}
+      - name: {{ $pkey }}
+      value: {{ quote $pval }}
+{{- end }}
+{{- end }}
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
