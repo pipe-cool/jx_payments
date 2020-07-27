@@ -20,6 +20,14 @@ spec:
 {{ toYaml .Values.podAnnotations | indent 8 }}
 {{- end }}
     spec:
+      initContainers:
+    {{- range $i, $e := .Values.setupTasks }}
+      - name: setup-{{ $i }}
+        image: "{{ $.Values.image.repository }}:{{ $.Values.image.tag }}"
+        args: {{ $e }}
+        env:
+    {{ include "envvars" $ | indent 8 }}
+    {{- end }}
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
