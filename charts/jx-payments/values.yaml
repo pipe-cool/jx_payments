@@ -18,6 +18,8 @@ service:
   annotations:
     fabric8.io/expose: "true"
     fabric8.io/ingress.annotations: "kubernetes.io/ingress.class: nginx"
+  setupTasks:
+    - python manage.py migrate
 resources:
   limits:
     cpu: 1
