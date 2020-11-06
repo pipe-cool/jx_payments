@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'moneyfx',
         'USER': 'root',
-	    'PASSWORD': os.environ.get('POSTGRES_PASSWORD', 'password'),
+	    'PASSWORD': os.environ.get('MYSQL_ROOT_PASSWORD', 'password'),
         'HOST': os.environ.get('MONEYFX_PG_HOST', 'mysql'),
         'PORT': 3306,
     }
